@@ -1,11 +1,28 @@
-# typescript-sandbox
+# Laboratorio 11A - Expresiones regulares
 
-Para la parte de cada módulo en la que te planteamos ejercicios con JavaScript puedes usar este sandbox.
+Vamos a leer IBAN de cuentas de bancos españoles, ver que estar bien formado, validarlo y extraer información del mismo.
 
-Pasos:
+Un IBAN en España tiene el siguiente formato:
 
-- Clonate el proyecto.
-- Instala las dependencias con `npm install`.
-- Ejecuta el sandbox con `npm run dev`.
-- Abre el navegador en `http://localhost:5173/` (si ese puerto no te funciona, mira en la consola donde has hecho el build, puede que este ocupado y se haya abierto en otro puerto).
-- Puedes empezar a meter tu código en el fichero:
+WW 0000 0000 00 0000000000
+
+WW: código de país 00: dígito de control 0000: código de banco 0000: código de sucursal 00: dígito de control 0000000000: número de cuenta
+
+Queremos poder leer IBAN con espacios, sin espacios o  guiones.
+
+Valida que un IBAN este bien formado.
+
+Después valida que sea correcto, para ello puedes usar esta librería
+
+https://github.com/Simplify/ibantools
+
+Después extrae el código de sucursal:
+
+Muestra:
+
+- El banco al que pertenece, para ello:
+- La oficina.
+- El digito de control.
+- La cuenta.
+
+Para sacar el nombre del banco extrae el código de banco y compara con una tabla de bancos españoles.
